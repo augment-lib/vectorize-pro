@@ -32,6 +32,15 @@ except Exception as e:
     _failed.append(("AugmentPNGToSVGPro", e))
     print(f"[augment-vectorize] ⚠ AugmentPNGToSVGPro unavailable: {e}")
 
+# ── Export SVG ──
+try:
+    from .export_svg import AugmentExportSVG
+    NODE_CLASS_MAPPINGS["AugmentExportSVG"] = AugmentExportSVG
+    NODE_DISPLAY_NAME_MAPPINGS["AugmentExportSVG"] = "Export SVG"
+except Exception as e:
+    _failed.append(("AugmentExportSVG", e))
+    print(f"[augment-vectorize] ⚠ AugmentExportSVG unavailable: {e}")
+
 # ── Summary ──
 WEB_DIRECTORY = "./web/js"
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS", "WEB_DIRECTORY"]

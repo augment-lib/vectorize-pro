@@ -28,7 +28,7 @@ class AugmentPNGToSVGPro:
             },
         }
 
-    RETURN_TYPES = ("SVG", "AUGMENT_JSON", "TRIGGER")
+    RETURN_TYPES = ("AUGMENT_SVG", "AUGMENT_JSON", "TRIGGER")
     RETURN_NAMES = ("svg", "json_result", "trigger")
     FUNCTION = "execute"
     CATEGORY = "Augment/Enhance"
@@ -106,13 +106,12 @@ class AugmentPNGToSVGPro:
         if svg_r.status_code != 200:
             raise RuntimeError(f"SVG fetch error: {svg_r.status_code}")
 
-        from comfy_api.latest._util.image_types import SVG
-        svg_bytes = io.BytesIO(svg_r.content)
-        size = svg_bytes.getbuffer().nbytes
+        svg_content = svg_r.content
+        size = len(svg_content)
         print(f"[Augment API] Done! Received SVG ({size} bytes)")
 
         json_result = json.dumps({"node": "PNGToSVGPro", "size_bytes": size})
-        return {"ui": {"text": [svg_r.text[:500]]}, "result": (SVG([svg_bytes]), json_result, "done")}
+        return {"ui": {"text": [svg_r.text[:500]]}, "result": (svg_content, json_result, "done")}
 
 
 NODE_CLASS_MAPPINGS = {

@@ -31,10 +31,11 @@ app.registerExtension({
                 window.open("https://augmentstudio.app/pricing", "_blank");
             });
 
-            const jsonIdx = this.outputs?.findIndex(o => o.name === "json_result");
-            if (jsonIdx >= 0) {
-                this.outputs.splice(jsonIdx, 1);
-            }
+            this.outputs?.forEach(o => {
+                if (o.name === "json_result") {
+                    o.hidden = true;
+                }
+            });
         };
 
         const origDraw = nodeType.prototype.onDrawForeground;
