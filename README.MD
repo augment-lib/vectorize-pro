@@ -32,7 +32,7 @@ Instead of pasting your key into every node, you can store it once using the **V
 2. Add a **Variable Get (String)** node. Set `variable_name` to `api_key` and connect its `text` output to the `api_key` input on **Vectorize Pro**.
 3. Once set, you can use **Variable Get** in any workflow and it will always pull your saved key. No need to paste it again.
 
-![API key setup example](assets/api_key_example.png)
+![API key setup example](assets/api_key_node_example.png)
 
 ## Included nodes
 
