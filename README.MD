@@ -8,12 +8,16 @@ Built for designers, studios, and agencies that need vector output they can actu
 
 Most PNG-to-SVG converters produce noisy paths, stray anchor points, and muddy fills. Vectorize Pro is powered by the Augment Studio API and tuned specifically for **design assets**: flat artwork, logomarks, icons, and brand graphics. The result is a minimal, well-structured SVG you can open in Illustrator, Figma, or Affinity and use as-is.
 
+## Results
+
+![Vectorize Pro results](assets/results.png)
+
 ## What you get
 
-- **True vector output.** Paths, not embedded rasters. Scale to any size without quality loss.
-- **Clean geometry.** Smooth curves, minimal nodes, no stray fragments.
-- **Accurate color mapping.** Fills and strokes match the source, ready for brand guidelines.
-- **Native ComfyUI SVG type.** Outputs the ComfyUI `SVG` type so you can preview, save, or pipe it downstream.
+- **True vector output.** Real paths, not embedded rasters. Scale your logo to a billboard or shrink it to a favicon with zero quality loss.
+- **Clean geometry.** Smooth curves, minimal anchor points, no stray fragments. The kind of SVG you'd actually put in a brand guidelines PDF.
+- **Accurate color mapping.** Fills and strokes match your source artwork. Drop a logo in, get the exact brand colors back out.
+- **Logo-ready files.** Output is structured for real design work: wordmarks, logomarks, icons, monograms, badges. Open it in Illustrator or Figma and it's ready to use.
 - **Chainable workflows.** Includes Trigger and Wait nodes for wiring multi-step pipelines (upscale first, then vectorize, etc.).
 
 ## Getting started
