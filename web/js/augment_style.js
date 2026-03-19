@@ -24,6 +24,9 @@ app.registerExtension({
         const origCreated = nodeType.prototype.onNodeCreated;
         nodeType.prototype.onNodeCreated = function () {
             origCreated?.apply(this, arguments);
+            if (this.widgets) {
+                this.widgets = this.widgets.filter(w => w.name !== "Get Tokens");
+            }
             this.addWidget("button", "Get Tokens", null, () => {
                 window.open("https://augmentstudio.app/pricing", "_blank");
             });

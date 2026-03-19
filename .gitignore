@@ -8,5 +8,6 @@ build/
 .venv/
 *.log
 .DS_Store
+.vscode/
 Thumbs.db
 node.zip

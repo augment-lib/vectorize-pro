@@ -24,6 +24,16 @@ Most PNG-to-SVG converters produce noisy paths, stray anchor points, and muddy f
 
 The node submits your image, polls for completion, and returns the SVG automatically. No extra steps.
 
+### Storing your API key for reuse
+
+Instead of pasting your key into every node, you can store it once using the **Variable Set** and **Variable Get** nodes from [augment-ComfyUI](https://github.com/augment-lib/augment-ComfyUI). Install that repo for the extra utility nodes, then:
+
+1. Add a **Variable Set (String)** node. Set `variable_name` to `api_key` and paste your key into the `value` field.
+2. Add a **Variable Get (String)** node. Set `variable_name` to `api_key` and connect its `text` output to the `api_key` input on **Vectorize Pro**.
+3. Once set, you can use **Variable Get** in any workflow and it will always pull your saved key. No need to paste it again.
+
+![API key setup example](assets/api_key_example.png)
+
 ## Included nodes
 
 
